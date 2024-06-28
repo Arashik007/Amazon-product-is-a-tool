@@ -1,0 +1,102 @@
+{
+	"name" : "NerdSpy",
+	"description" : "Amazon Product Research Tool",
+	"version" : "1.0",
+	"manifest_version" : 3,
+	"permissions" : [
+		"tabs",
+		"activeTab",
+		"storage",
+		"cookies",
+		"scripting",
+		"identity",
+		"identity.email"
+	],
+	"host_permissions": [
+        "https://*.amazon.co.uk/*",
+		"https://*.amazon.com/*",
+		"https://*.amazon.ca/*",
+		"https://*.amazon.com.au/*",
+		"https://*.amazon.ae/*",
+		"https://*.amazon.de/*",
+		"https://*.amazon.it/*",
+		"https://*.amazon.es/*",
+		"https://*.amazon.fr/*",
+		"https://*.amazon.in/*",
+		"https://*.amazon.sg/*",
+		"https://*.amazon.com.mx/*",
+		"https://*.amazon.co.jp/*",
+		"*://nerd-spy.com/*"
+    ],
+	"icons": { 
+		"16" : "icon/16x16.png",
+		"16" : "icon/16x16_inactive.png",
+        "48" : "icon/48x48.png",
+        "128": "icon/128x128.png" 
+    },
+    "content_scripts" : [
+		{
+			"matches" : [
+				"https://*.amazon.co.uk/*",
+				"https://*.amazon.com/*",
+				"https://*.amazon.ca/*",
+				"https://*.amazon.com.au/*",
+				"https://*.amazon.ae/*",
+				"https://*.amazon.de/*",
+				"https://*.amazon.it/*",
+				"https://*.amazon.es/*",
+				"https://*.amazon.fr/*",
+				"https://*.amazon.in/*",
+				"https://*.amazon.sg/*",
+				"https://*.amazon.com.mx/*",
+				"https://*.amazon.co.jp/*"
+			],
+			"js"  : ["js/content.js"],
+			"css"  : ["css/style.css"]
+		}
+	],
+    "background": {
+      	"service_worker": "js/background.js"
+  	},
+  	"action": {
+	    "default_icon": {
+	      "16": "icon/16x16.png"
+	    },
+	    "default_title": "NerdSpy"
+	},
+  	"web_accessible_resources": [{
+  		"resources": [
+		  "img/small_logo.png",
+		  "img/close.png",
+		  "img/icons8-macos-close-32.png",
+		  "img/icons8-macos-maximize.png",
+		  "img/icons8-macos-minimize.png",
+		  "img/Infobox_info_icon.svg",
+		  "img/downArrow.png",
+		  "img/download.png",
+		  "img/number.png",
+		  "img/sort_not.png",
+		  "img/upArrow.png",
+		  "img/bookmark.png",
+		  "img/bookmarked.png",
+		  "https://m.media-amazon.com/*"
+		],
+      	"matches" : [
+			"https://*.amazon.co.uk/*",
+			"https://*.amazon.com/*",
+			"https://*.amazon.ca/*",
+			"https://*.amazon.com.au/*",
+			"https://*.amazon.ae/*",
+			"https://*.amazon.de/*",
+			"https://*.amazon.it/*",
+			"https://*.amazon.es/*",
+			"https://*.amazon.fr/*",
+			"https://*.amazon.in/*",
+			"https://*.amazon.sg/*",
+			"https://*.amazon.com.mx/*",
+			"https://*.amazon.co.jp/*"
+		]
+  	}]
+}
+
+
